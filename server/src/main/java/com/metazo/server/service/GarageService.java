@@ -9,14 +9,18 @@ import java.util.List;
 @Service
 public class GarageService {
     static private ArrayList<Car> cars = new ArrayList<>(Arrays.asList(
-            new Car("X6", "BMW", 2015, Car.Color.RED),
-            new Car("X6", "BMW", 2015, Car.Color.RED),
-            new Car("X6", "BMW", 2015, Car.Color.RED),
-            new Car("X6", "BMW", 2015, Car.Color.RED),
-            new Car("X6", "BMW", 2015, Car.Color.RED)
+            new Car(1,"X6", "BMW", 2015, Car.Color.RED),
+            new Car(2,"X6", "BMW", 2015, Car.Color.RED),
+            new Car(3,"X6", "BMW", 2015, Car.Color.RED),
+            new Car(4,"X6", "BMW", 2015, Car.Color.RED),
+            new Car(5,"X6", "BMW", 2015, Car.Color.RED)
     ));
 
     public List<Car> getCars() {
         return cars;
+    }
+
+    public Car getCar(long id) {
+        return cars.stream().filter(car -> car.getId() == id).findFirst().orElse(null);
     }
 }

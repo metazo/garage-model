@@ -2,18 +2,21 @@ package com.metazo.server.model;
 
 public class Car {
 
-    enum Color {
+    public enum Color {
         GREEN,
         YELLOW,
-        RED
+        RED,
+        BLUE
     }
+    private long id;
     private String model;
     private String brand;
     private int year;
     private Color color;
 
-    public Car(String model, String brand, int year, Color color) {
+    public Car(long id, String model, String brand, int year, Color color) {
         this.model = model;
+        this.id = id;
         this.brand = brand;
         this.year = year;
         this.color = color;
@@ -49,5 +52,13 @@ public class Car {
 
     public void setColor(Color color) {
         this.color = color;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }
