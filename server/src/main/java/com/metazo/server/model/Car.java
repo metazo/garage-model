@@ -12,6 +12,13 @@ public class Car {
     private int year;
     private Color color;
 
+    public Car(String model, String brand, int year, Color color) {
+        this.model = model;
+        this.brand = brand;
+        this.year = year;
+        this.color = color;
+    }
+
     public String getModel() {
         return model;
     }
