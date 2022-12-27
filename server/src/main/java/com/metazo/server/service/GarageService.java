@@ -23,4 +23,20 @@ public class GarageService {
     public Car getCar(long id) {
         return cars.stream().filter(car -> car.getId() == id).findFirst().orElse(null);
     }
+
+    public void deleteCar(long id) {
+        cars.removeIf(car -> car.getId() == id);
+    }
+
+    public void addCar(Car car) {
+        cars.add(car);
+    }
+
+    public void updateCar(Car car, long id) {
+        cars.forEach(car1 -> {
+            if(car1.getId() == id) {
+                cars.set(cars.indexOf(car1),car );
+            }
+        });
+    }
 }
